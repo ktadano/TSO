@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(name: "Test User")
   end
 
-  test "should be valid" do
+  test "should not be valid" do
     assert_not @user.valid?
   end
 
