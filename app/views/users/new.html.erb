@@ -1,2 +1,9 @@
 <h1>Sign Up</h1>
-<p>ユーザー登録フォームが置かれる。</p>
+<p>ユーザー情報を入力してください。</p>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "登録する！", class: "btn btn-primary" %>
+<% end %>
