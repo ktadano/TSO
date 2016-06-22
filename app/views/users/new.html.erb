@@ -2,8 +2,14 @@
 <p>ユーザー情報を入力してください。</p>
 
 <%= form_for(@user) do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, "名前" %>
   <%= f.text_field :name %>
+
+  <%= f.label :password, "パスワード" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "もう一度入力" %>
+  <%= f.password_field :password_confirmation %>
 
   <%= f.submit "登録する！", class: "btn btn-primary" %>
 <% end %>
