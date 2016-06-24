@@ -1,4 +1,7 @@
 <h1>Home Page</h1>
 <p>レイアウトを少し頑張りました。</p>
 
-<%= link_to "サインアップ!", signup_path %>
+<% if logged_in? %>
+<% else %>
+  <%= link_to "サインアップ!", signup_path %>
+<% end %>
