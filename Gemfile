@@ -15,10 +15,13 @@ gem 'mime-types', '3.1'
 gem 'sdoc', '0.4.0', group: :doc
 gem 'bcrypt', '3.1.7'
 
+group :development do
+  gem 'web-console'
+end
+
 group :development, :test do
   gem 'sqlite3', '1.3.9'
   gem 'byebug', '3.4.0'
-  gem 'web-console', '2.0.0.beta3'
   gem 'spring', '1.1.3'
   gem 'faker', '1.4.2'
 end
