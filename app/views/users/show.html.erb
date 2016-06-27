@@ -1,4 +1,16 @@
 <h1>User Page</h1>
-<p>
+<div class="col-md-8">
   <%= @user.name %> さんの個人ページ
-</p>
+  <% if @user.products.any? %>
+    <h3>Product (<%= @user.products.count %>)</h3>
+    <ol class="porducts">
+      <%= render @products %>
+    </ol>
+    <%= will_paginate @products %>
+  <% end %>
+  <div class="row">
+    <aside class="col-md-4">
+      <%= link_to "商品の登録", product_resistration_path %>
+    </aside>
+  </div>
+</div>
