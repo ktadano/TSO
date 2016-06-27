@@ -1,0 +1,9 @@
+<li id="product-<%= product.id %>">
+  <span class="product"><%= link_to product.user.name %></span>
+  <span class="name"><%= link_to product.name, product %></span>
+  <span class="current_bit"><%= product.current_bit %></span>
+  <span class="time_left"><%= product.time_left %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(product.created_at) %>
+  </span>
+</li>
