@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
       BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def product_list
+    Product.where("user_id not ?", nil)
+  end
 end
