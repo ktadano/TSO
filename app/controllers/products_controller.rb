@@ -22,7 +22,8 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name,
-                                    :current_bit,
+                                    :current_bid,
+                                    :discription,
                                     :time_left)
   end
 end
