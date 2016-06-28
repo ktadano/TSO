@@ -15,6 +15,9 @@
       <%= f.label :time_left, "取引期間" %>
       <%= f.datetime_field :time_left, class: 'form-control' %>
 
+      <%= f.label :discription, "備考欄" %>
+      <%= f.text_area:discription, class: 'form-control' %>
+
       <%= f.submit "登録する！", class: "btn btn-primary" %>
     <% end %>
   </div>
