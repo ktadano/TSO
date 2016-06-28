@@ -2,6 +2,15 @@
 <p>レイアウトを少し頑張りました。</p>
 
 <% if logged_in? %>
+  <div class="col-md-8">
+    <h3>出品商品一覧</h3>
+    <% if @product_list.any? %>
+      <ol class="products">
+        <%= render @product_list %>
+      </ol>
+      <%= will_paginate @product_list %>
+    <% end %>
+  </div>
 <% else %>
   <%= link_to "サインアップ!", signup_path %>
 <% end %>

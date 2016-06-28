@@ -205,3 +205,28 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* products */
+.products {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 2px solid #e8e8e8;
+  }
+  .name {
+    margin-top: 5em;
+    padding-top: 0;
+    margin-left: 60px;
+  }
+  .user {
+    margin-left: 60px;
+  }
+  .current_bid {
+    margin-left: 60px;
+  }
+  .time_left {
+    display: block;
+    margin-left: 60px;
+  }
+}
