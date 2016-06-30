@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'product_resistration' => 'products#new'
   resources :users, only: [:show, :create]
   resources :products, only: [:show, :create]
+  resources :bids, only: [:create]
 end
