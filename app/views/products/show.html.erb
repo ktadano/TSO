@@ -7,4 +7,14 @@
     <li>取引期限 : <%= @product.time_left %></li>
     <li>備考欄 : <%= @product.discription %></li>
   </ol>
+    <%= form_for (@bid) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.hidden_field :product_id %>
+
+      <%= f.label :current_bid, "入札額" %>
+      <%= f.text_field :current_bid, class: 'form-control' %>
+
+      <%= f.submit "入札する！", class: "btn btn-primary" %>
+    <% end %>
 </div>
