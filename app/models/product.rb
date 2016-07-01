@@ -6,4 +6,8 @@ class Product < ActiveRecord::Base
   validates :current_bid, presence: true, length: { maximum: 8 }
   validates :discription, presence: true, length: { maximum: 128 }
   validates :time_left, presence: true
+
+  def update_price(bidding_price)
+    self.current_bid = bidding_price
+  end
 end
