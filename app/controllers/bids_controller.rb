@@ -9,9 +9,18 @@ class BidsController < ApplicationController
     elsif !@bid.greater_price?
       render_error_messages("入札金額が低いため入札できませんでした。")
     else
+
+      Bid.transaction do
+        @bid.save!
+        @product.update_price(@bid.current_bid)
+        @product.save!
+      end
       flash[:success] = "入札に成功しました。"
       redirect_to product_path(@bid.product_id)
     end
+    rescue ActiveRecord::RecordInvalid
+      render_error_messages("入力された金額が大きすぎます。")
+   end
 
   private
 
