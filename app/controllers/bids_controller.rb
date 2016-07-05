@@ -4,7 +4,9 @@ class BidsController < ApplicationController
     @bid = current_user.bids.build(bid_params)
     @product = Product.find(@bid.product_id)
 
-    if @bid.current_bid.blank?
+    if product_myself?
+      render_error_messages("自分の商品に入札はできません。")
+    elsif @bid.current_bid.blank?
       render_error_messages("入札内容が適切ではありません")
     elsif !@bid.greater_price?
       render_error_messages("入札金額が低いため入札できませんでした。")
