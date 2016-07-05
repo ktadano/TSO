@@ -1,5 +1,16 @@
 <h1>Home Page</h1>
-<p>レイアウトは頑張らない。後からここに要素が増えてゆく</p>
+<p>レイアウトを少し頑張りました。</p>
 
-<%= link_to "サインアップ!", signup_path %>
-<%= link_to "ログイン！", login_path %>
+<% if logged_in? %>
+  <div class="col-md-8">
+    <h3>出品商品一覧</h3>
+    <% if @product_list.any? %>
+      <ol class="products">
+        <%= render @product_list %>
+      </ol>
+      <%= will_paginate @product_list %>
+    <% end %>
+  </div>
+<% else %>
+  <%= link_to "サインアップ!", signup_path %>
+<% end %>

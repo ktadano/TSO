@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  current_bid: 1.5
+  time_left: 2016-06-27 11:55:30
+  user_id: 
