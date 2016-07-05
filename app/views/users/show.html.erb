@@ -2,15 +2,24 @@
 <div class="col-md-8">
   <%= @user.name %> さんの個人ページ
   <div class="row">
-   <aside class="col-md-4">
-     <%= link_to "商品の登録", product_resistration_path %>
-   </aside>
- </div>
- <% if @user.products.any? %>
+    <aside class="col-md-4">
+      <%= link_to "商品の登録", product_resistration_path %>
+    </aside>
+  </div>
+  <% if @user.products.any? %>
     <h3>登録商品(<%= @user.products.count %>)</h3>
     <ol class="porducts">
       <%= render @products %>
     </ol>
     <%= will_paginate @products %>
   <% end %>
+
+  <% if @user.bids.any? %>
+    <h3>入札商品(<%= @bid_items.count %>)</h3>
+    <ol class="bids">
+      <%= render @bid_items %>
+    </ol>
+    <%= will_paginate @products %>
+  <% end %>
+
 </div>
