@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
 
-  def product_list
-    Product.where("user_id not ?", nil)
+  def product_item
+    Product.where.not(id: nil)
   end
 end
