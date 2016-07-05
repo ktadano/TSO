@@ -1,15 +1,21 @@
 <h1>Sign Up</h1>
 <p>ユーザー情報を入力してください。</p>
 
-<%= form_for(@user) do |f| %>
-  <%= f.label :name, "名前" %>
-  <%= f.text_field :name %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :password, "パスワード" %>
-  <%= f.password_field :password %>
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "もう一度入力" %>
-  <%= f.password_field :password_confirmation %>
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.submit "登録する！", class: "btn btn-primary" %>
-<% end %>
+      <%= f.label :password_confirmation, "もう一度入力" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "登録する！", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

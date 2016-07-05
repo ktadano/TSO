@@ -1,5 +1,16 @@
-<h1>User Page</h1>
-<p>
+<h1>マイページ</h1>
+<div class="col-md-8">
   <%= @user.name %> さんの個人ページ
-</p>
-<%= link_to "ログアウト", logout_path, method: "delete" %>
+  <div class="row">
+   <aside class="col-md-4">
+     <%= link_to "商品の登録", product_resistration_path %>
+   </aside>
+ </div>
+ <% if @user.products.any? %>
+    <h3>登録商品(<%= @user.products.count %>)</h3>
+    <ol class="porducts">
+      <%= render @products %>
+    </ol>
+    <%= will_paginate @products %>
+  <% end %>
+</div>

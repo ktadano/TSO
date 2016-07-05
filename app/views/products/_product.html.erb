@@ -1,0 +1,9 @@
+<li id="product-<%= product.id %>">
+  <span class="name">商品名　 : <%= link_to product.name, product %></span>
+  <br />
+  <span class="user">出品者名 : <%= link_to product.user.name, product.user %></span>
+  <br />
+  <span class="current_bid">現在価格 : <%= product.current_bid %> 円</span>
+  <br />
+  <span class="time_left">取引期限 : <%= product.time_left %></span>
+</li>
